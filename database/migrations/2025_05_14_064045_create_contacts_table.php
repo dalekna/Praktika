@@ -9,15 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-public function up(): void
+public function up()
 {
-    Schema::create('contacts', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('phone');
-        $table->timestamps();
-    });
+Schema::create('contacts', function (Blueprint $table) {
+$table->id();
+$table->string('name');
+$table->string('phone');
+$table->timestamps();
+});
 }
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('contacts');
